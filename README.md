@@ -1,0 +1,3 @@
+react icons
+
+swiper/ Motion 
