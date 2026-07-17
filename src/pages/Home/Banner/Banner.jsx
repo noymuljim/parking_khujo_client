@@ -25,7 +25,7 @@ const Banner = () => {
             Find. Park. Go.
           </h1>
 
-          <p className="mt-6 text-sm text-white">
+          <p className="mt-6 text-sm text-[#CBD5E1]">
             Never Waste Time Looking for Parking Again!
           </p>
 

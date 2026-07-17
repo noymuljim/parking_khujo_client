@@ -1,0 +1,98 @@
+[
+  {
+    "id": "pk001",
+    "user_email": "rahim.uddin@gmail.com",
+    "userName": "Rahim Uddin",
+    "parking_id": "park001",
+    "parking_name": "Banani Super Market Parking",
+    "ratings": 5,
+    "review": "Found a parking spot within minutes. The booking process was very smooth.",
+    "user_photoURL": "https://randomuser.me/api/portraits/men/11.jpg",
+    "vehicle_type": "Sedan",
+    "booking_date": "2026-07-01T09:30:00.000Z"
+  },
+  {
+    "id": "pk002",
+    "user_email": "nusrat.jahan@gmail.com",
+    "userName": "Nusrat Jahan",
+    "parking_id": "park002",
+    "parking_name": "Jamuna Future Park Parking",
+    "ratings": 4.8,
+    "review": "The app showed available slots accurately. Saved me a lot of time.",
+    "user_photoURL": "https://randomuser.me/api/portraits/women/22.jpg",
+    "vehicle_type": "SUV",
+    "booking_date": "2026-07-03T14:15:00.000Z"
+  },
+  {
+    "id": "pk003",
+    "user_email": "tanvir.hasan@gmail.com",
+    "userName": "Tanvir Hasan",
+    "parking_id": "park003",
+    "parking_name": "Bashundhara City Parking",
+    "ratings": 4.6,
+    "review": "Easy booking and secure parking. Definitely recommended.",
+    "user_photoURL": "https://randomuser.me/api/portraits/men/35.jpg",
+    "vehicle_type": "Hatchback",
+    "booking_date": "2026-07-05T11:20:00.000Z"
+  },
+  {
+    "id": "pk004",
+    "user_email": "farzana.akter@gmail.com",
+    "userName": "Farzana Akter",
+    "parking_id": "park004",
+    "parking_name": "Gulshan Avenue Parking",
+    "ratings": 5,
+    "review": "Loved the real-time parking availability feature. Very convenient.",
+    "user_photoURL": "https://randomuser.me/api/portraits/women/31.jpg",
+    "vehicle_type": "Sedan",
+    "booking_date": "2026-07-07T17:40:00.000Z"
+  },
+  {
+    "id": "pk005",
+    "user_email": "mehedi.hassan@gmail.com",
+    "userName": "Mehedi Hassan",
+    "parking_id": "park005",
+    "parking_name": "Dhanmondi 27 Parking",
+    "ratings": 4.2,
+    "review": "Affordable parking with good security. Entry was a bit crowded.",
+    "user_photoURL": "https://randomuser.me/api/portraits/men/28.jpg",
+    "vehicle_type": "SUV",
+    "booking_date": "2026-07-09T13:10:00.000Z"
+  },
+  {
+    "id": "pk006",
+    "user_email": "sadia.islam@gmail.com",
+    "userName": "Sadia Islam",
+    "parking_id": "park006",
+    "parking_name": "Uttara Sector 7 Parking",
+    "ratings": 4.9,
+    "review": "Quick reservation and easy navigation to the parking entrance.",
+    "user_photoURL": "https://randomuser.me/api/portraits/women/45.jpg",
+    "vehicle_type": "Crossover",
+    "booking_date": "2026-07-11T10:00:00.000Z"
+  },
+  {
+    "id": "pk007",
+    "user_email": "rifat.ahmed@gmail.com",
+    "userName": "Rifat Ahmed",
+    "parking_id": "park007",
+    "parking_name": "Motijheel Commercial Parking",
+    "ratings": 4.7,
+    "review": "Very helpful during office hours. No need to search for parking anymore.",
+    "user_photoURL": "https://randomuser.me/api/portraits/men/42.jpg",
+    "vehicle_type": "Sedan",
+    "booking_date": "2026-07-13T08:45:00.000Z"
+  },
+  {
+    "id": "pk008",
+    "user_email": "mim.chowdhury@gmail.com",
+    "userName": "Mim Chowdhury",
+    "parking_id": "park008",
+    "parking_name": "Airport Parking Zone",
+    "ratings": 5,
+    "review": "Excellent experience. Secure parking and instant confirmation after booking.",
+    "user_photoURL": "https://randomuser.me/api/portraits/women/18.jpg",
+    "vehicle_type": "Sedan",
+    "booking_date": "2026-07-15T06:20:00.000Z"
+  }
+]

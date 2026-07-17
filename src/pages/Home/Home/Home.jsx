@@ -1,23 +1,22 @@
 
 
 import Banner from "../Banner/Banner";
+import FAQ from "../FAQ/FAQ";
 import MotionText from "../Motion/MotionText";
+import Reviews from "../Reviews/Reviews";
+
+const reviewsPromise = fetch('/reviews.json').then(res => res.json())
+
 
 const Home = () => {
   return (
     <>
       <Banner />
-    <MotionText></MotionText>
+      <MotionText></MotionText>
       {/* Other Sections */}
+      <FAQ></FAQ>
+      <Reviews reviewsPromise={reviewsPromise}></Reviews>
 
-      <section className="py-32">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-5xl font-bold">
-            Parking Near You
-          </h1>
-
-        </div>
-      </section>
     </>
   );
 };
