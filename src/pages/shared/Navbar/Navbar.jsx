@@ -1,8 +1,23 @@
 import { useEffect, useState } from "react";
 
 import Logo from "../../../components/Logo";
+import useAuth from "../../../Hooks/useAuth";
+import { Link } from "react-router";
+import userLogo from "../../../assets/user.jpg"
 
 const Navbar = () => {
+
+   const { user,logOut } = useAuth();
+
+  const handleLogOut=()=>{
+        logOut()
+        .then(result=>{
+            console.log(result.user);
+        })
+        .catch(error=>{
+            console.log(error)
+        })
+    }
 
 
   const [scrolled, setScrolled] = useState(false);
@@ -103,9 +118,37 @@ ${scrolled
 
         {/* Navbar End */}
         <div className="navbar-end">
-          <button className="btn bg-[#10B981] hover:bg-[#059669] text-white border-none rounded-full px-6">
-            Login
-          </button>
+             {
+                    user ? (
+                        <div className="flex items-center gap-3">
+                            {/* User Image */}
+                            <div className="w-9 h-9 border-2 border-gray-300
+                             rounded-full overflow-hidden">
+                                <img
+                                    src={user.photoURL ? user.photoURL : userLogo}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+
+
+
+                            {/* Logout Button */}
+                            <button onClick={handleLogOut} className="btn bg-primary rounded-3xl hover:bg-secondary text-white">
+                                Log Out
+                            </button>
+                        </div>
+                    ) : (
+
+                        <div className="flex items-center">
+
+                            <Link to="/login" className="btn bg-primary rounded-3xl hover:bg-secondary text-white ">
+                                Log in
+                            </Link>
+
+
+                        </div>
+                    )
+                }
         </div>
       </div>
     </div>

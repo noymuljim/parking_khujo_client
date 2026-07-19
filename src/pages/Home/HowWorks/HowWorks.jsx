@@ -72,7 +72,7 @@ const HowWorks = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-[#1E1D38] via-[#1E1D38]/10 to-transparent"></div>
 
                         <div className="absolute bottom-8 left-30 z-20">
-                            <button className="group flex items-center gap-3 rounded-full bg-[#2e9bfa] p-2 pl-6 text-white font-semibold  transition-all duration-300 hover:-translate-y-1">
+                            <button className="group flex items-center gap-3 rounded-full bg-[#2e9bfa]  p-2 pl-6 text-white font-semibold  transition-all duration-300 hover:-translate-y-1">
                                 <span>Find your nearest parking space</span>
 
                                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white transition-transform duration-300 group-hover:translate-x-1">

@@ -8,6 +8,16 @@
 
 }
 
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #2e9bfa;
+  --color-secondary: #214F7A;
+  --color-bg: #EAECED;
+ 
+}
+
+
 body{
    
   font-family: "Manrope", sans-serif;
@@ -19,3 +29,4 @@ body{
      font-family: "Playfair Display", serif;
     font-style: italic;
 }
+
