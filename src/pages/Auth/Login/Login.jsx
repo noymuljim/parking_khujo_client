@@ -2,12 +2,35 @@
 import { useForm } from "react-hook-form";
 import loginImg from "../../../assets/log.jpg";
 import logo from "../../../assets/plogo.png";
-import { NavLink } from "react-router";
+import { NavLink, useLocation, useNavigate } from "react-router";
 import SocialLogin from "../socialLogin/socialLogin";
+import useAuth from "../../../Hooks/useAuth";
 const Login = () => {
+
+    const location=useLocation();
+    //console.log('in loginpage',location);
+    const navigate=useNavigate();
+
+
     const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const { signInUser } = useAuth();
+
     const handleLogin = (data) => {
-        console.log('get all info form data', data)
+
+
+
+        signInUser(data.email, data.password)
+            .then((res) => {
+                console.log("Login Success:", res.user);
+                navigate(location?.state || '/')
+            })
+            .catch((err) => {
+                console.log(err);
+               
+            });
+
+
     }
     return (
 
@@ -42,7 +65,7 @@ const Login = () => {
                         <label className="label text-white">Password</label>
                         <input type="password" {...register('password', {
                             required: true, minLength: 6,
-                            pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9])+$/
+                            pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).+$/
                         })}
 
                             className="input w-full rounded-3xl" placeholder="Enter password" />
@@ -56,10 +79,10 @@ const Login = () => {
                                 1 number 1 special</p>
                         }
 
-                        <button className="btn btn-neutral my-4">Login</button>
+                        <button className="btn rounded-3xl bg-primary hover:bg-secondary btn-neutral my-4">Login</button>
                         <SocialLogin></SocialLogin>
 
-                        <p className="text-center text-white">New here? <NavLink to="/register" className='ml-2 text-yellow-500 underline'>Register</NavLink></p> 
+                        <p className="text-center text-white font-bold">Are you new here? <NavLink to="/register" className='ml-2 text-green-500 underline'>Register</NavLink></p>
 
 
                     </fieldset>

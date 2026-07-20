@@ -5,15 +5,55 @@ import logo from "../../../assets/plogo.png";
 import { NavLink } from "react-router";
 import useAuth from "../../../Hooks/useAuth";
 import SocialLogin from "../socialLogin/socialLogin";
+import axios from "axios";
+import { confirmPasswordReset } from "firebase/auth";
 const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const { registerUser } = useAuth();
+    const { registerUser,updateUserProfile } = useAuth();
 
 
     const handleRegister = (data) => {
+        // console.log('get photo from',data.photo[0])
+        const profileImage = data.photo[0];
+
+
+
+
         registerUser(data.email, data.password)
             .then(result => {
                 console.log(result.user);
+
+
+                
+
+                const formData = new FormData();
+                formData.append('image', profileImage)
+
+                // const imgAiPIurl = `https://api.imgbb.com/1/upload?expiration=600&key=${import.meta.env.VITE_image_host_key}`
+               
+               const imgAiPIurl = `https://api.imgbb.com/1/upload?expiration=600&key=${import.meta.env.VITE_image_host_key}`;
+                axios.post(imgAiPIurl, formData)
+                .then(res=>{
+                     console.log('after img upld',res.data.data.url)
+
+
+
+                      const userProfile = {
+                            displayName: data.name,
+                            photoURL: res.data.data.url
+                        }
+
+                        updateUserProfile(userProfile)
+                        .then(()=>{
+                             console.log('user profile updated')
+                        })
+                        .catch(err=>{
+                            confirmPasswordReset.log(err)
+                        })
+                })
+
+
+
             })
             .catch(error => {
                 console.log(error)
@@ -43,6 +83,23 @@ const Register = () => {
                     </h2>
                     {/* form data */}
                     <fieldset className="fieldset p-4">
+                        {/* name */}
+                        <label className="label text-white">Name</label>
+                        <input type="name "{...register('name', { required: true })}
+                            className="input w-full rounded-3xl" placeholder="Enter your name"></input>
+                        {errors.name?.type === "required" &&
+                            <p className="text-red-500">you must need to enter your name</p>}
+                        {/* image */}
+                        <label className="label text-white">Photo</label>
+                        {/* <input type="file" className="file-input" /> */}
+                        {/* Daisy--> file input */}
+                        <input type="file" {...register('photo', { required: true })}
+                            className="file-input w-full rounded-3xl" placeholder="Upload your photo" />
+
+                        {errors.name?.type === 'required' &&
+                            <p className='text-red-500'>Photo is required</p>}
+
+
                         {/* email */}
                         <label className="label text-white">Email</label>
                         <input type="email" {...register('email', { required: true })}
@@ -50,6 +107,7 @@ const Register = () => {
 
                         {errors.email?.type === 'required' &&
                             <p className='text-red-500'>Please enter email </p>}
+
                         {/* pass */}
                         <label className="label text-white">Password</label>
                         <input type="password" {...register('password', {
@@ -62,15 +120,15 @@ const Register = () => {
                             <p className="text-red-500">plaease enter password</p>}
                         {errors.password?.type === 'minLength' &&
                             <p className="text-red-500">pass need 6 character or more</p>}
-                        {/* {
+                        {
                             errors.password?.type === 'pattern' &&
                             <p className="text-red-500">must have 1 uppercase letter 1 lowercase letter
                                 1 number 1 special</p>
-                        } */}
+                        }
 
-                        <button className="btn btn-neutral my-4">Register Now</button>
+                        <button className="btn bg-primary hover:bg-secondary  rounded-3xl text-white my-4 ">Register Now</button>
                         <SocialLogin></SocialLogin>
-                        <p className="text-center text-white">Already have an account? <NavLink to="/login" className='ml-2 text-yellow-500 underline'>Login</NavLink></p>
+                        <p className="text-center text-white  font-bold">Already have an account? <NavLink to="/login" className='ml-2 text-green-500 underline'>Login</NavLink></p>
 
 
                     </fieldset>

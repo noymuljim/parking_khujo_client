@@ -4,6 +4,8 @@ import Home from "../pages/Home/Home/Home";
 import authLayout from "../layout/authLayout";
 import Login from "../pages/Auth/Login/Login";
 import Register from "../pages/Auth/Register/Register";
+import PrivateRoute from "./PrivateRoute";
+import BecomePartner from "../pages/Home/BecomePartner/BecomePartner";
 
 export const router = createBrowserRouter([
   {
@@ -13,6 +15,12 @@ export const router = createBrowserRouter([
       {
         index: true,
         Component: Home
+      },
+       {
+        path: 'becomePartner',
+        // Component: BeDecorator,
+        element:<PrivateRoute><BecomePartner></BecomePartner></PrivateRoute>,
+
       }
     ]
   },
