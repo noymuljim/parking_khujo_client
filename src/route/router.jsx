@@ -1,11 +1,13 @@
 import { createBrowserRouter } from "react-router";
 import rootLayout from "../layout/rootLayout";
 import Home from "../pages/Home/Home/Home";
-import authLayout from "../layout/authLayout";
 import Login from "../pages/Auth/Login/Login";
 import Register from "../pages/Auth/Register/Register";
 import PrivateRoute from "./PrivateRoute";
-import BecomePartner from "../pages/Home/BecomePartner/BecomePartner";
+import authLayout from "../layout/authLayout";
+import DashboardLayout from "../layout/DashboardLayout";
+import BecomePartner from "../pages/Others/BecomePartner/BecomePartner";
+import ApplyPartnerApplication from "../pages/Others/ApplyPartnerApplication/ApplyPartnerApplication";
 
 export const router = createBrowserRouter([
   {
@@ -16,12 +18,7 @@ export const router = createBrowserRouter([
         index: true,
         Component: Home
       },
-       {
-        path: 'becomePartner',
-        // Component: BeDecorator,
-        element:<PrivateRoute><BecomePartner></BecomePartner></PrivateRoute>,
 
-      }
     ]
   },
   {
@@ -37,6 +34,21 @@ export const router = createBrowserRouter([
         Component: Register
       }
     ]
+  },
+  {
+    path: 'dashboard',
+    element: (
+      <PrivateRoute> <DashboardLayout></DashboardLayout> </PrivateRoute>
+    )
+  },
+  {
+    path:'BecomePartner',
+    element:<PrivateRoute><BecomePartner></BecomePartner></PrivateRoute>
+  },
+  {
+    path:'ApplyPartnerApplication',
+    element:<PrivateRoute><ApplyPartnerApplication></ApplyPartnerApplication></PrivateRoute>
   }
+
 
 ]);
