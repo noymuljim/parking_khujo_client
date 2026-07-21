@@ -1,10 +1,10 @@
-
 import { useForm } from "react-hook-form";
 import loginImg from "../../../assets/log.jpg";
 import logo from "../../../assets/plogo.png";
-import { NavLink, useLocation, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import SocialLogin from "../socialLogin/socialLogin";
 import useAuth from "../../../Hooks/useAuth";
+import { toast } from "react-toastify";
 const Login = () => {
 
     const location=useLocation();
@@ -25,6 +25,7 @@ const Login = () => {
                 console.log("Login Success:", res.user);
                 navigate(location?.state || '/')
             })
+            toast.success('Welcome 🚗')
             .catch((err) => {
                 console.log(err);
                
@@ -82,7 +83,12 @@ const Login = () => {
                         <button className="btn rounded-3xl bg-primary hover:bg-secondary btn-neutral my-4">Login</button>
                         <SocialLogin></SocialLogin>
 
-                        <p className="text-center text-white font-bold">Are you new here? <NavLink to="/register" className='ml-2 text-green-500 underline'>Register</NavLink></p>
+                        <p className="text-center text-white font-bold">Are you new here? 
+
+
+                       <Link  to="/register"state={location.state}
+                       className='ml-2 text-green-500 underline'>Register</Link>     
+                         </p>
 
 
                     </fieldset>
