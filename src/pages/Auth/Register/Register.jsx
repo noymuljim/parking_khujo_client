@@ -106,6 +106,7 @@ const Register = () => {
                             className="input w-full rounded-3xl" placeholder="Enter your name"></input>
                         {errors.name?.type === "required" &&
                             <p className="text-red-500">you must need to enter your name</p>}
+                     
                         {/* image */}
                         <label className="label text-white">Photo</label>
                         {/* <input type="file" className="file-input" /> */}

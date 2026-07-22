@@ -6,8 +6,7 @@ import Register from "../pages/Auth/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 import authLayout from "../layout/authLayout";
 import DashboardLayout from "../layout/DashboardLayout";
-import BecomePartner from "../pages/Others/BecomePartner/BecomePartner";
-import ApplyPartnerApplication from "../pages/Others/ApplyPartnerApplication/ApplyPartnerApplication";
+import BecomePartner from "../pages/Dashboard/BecomePartner/BecomePartner";
 
 export const router = createBrowserRouter([
   {
@@ -35,20 +34,22 @@ export const router = createBrowserRouter([
       }
     ]
   },
+
   {
     path: 'dashboard',
-    element: (
-      <PrivateRoute> <DashboardLayout></DashboardLayout> </PrivateRoute>
-    )
+    element: <PrivateRoute> <DashboardLayout></DashboardLayout> </PrivateRoute>,
+    children: [
+      {
+        path: 'BecomePartner',
+        element: <PrivateRoute><BecomePartner></BecomePartner></PrivateRoute>
+      },
+
+    ]
+
   },
-  {
-    path:'BecomePartner',
-    element:<PrivateRoute><BecomePartner></BecomePartner></PrivateRoute>
-  },
-  {
-    path:'ApplyPartnerApplication',
-    element:<PrivateRoute><ApplyPartnerApplication></ApplyPartnerApplication></PrivateRoute>
-  }
+
+  
+
 
 
 ]);

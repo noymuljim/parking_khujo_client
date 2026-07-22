@@ -1,7 +1,6 @@
 
 
 import Banner from "../Banner/Banner";
-import BecomePartner from "../../Others/BecomePartner/BecomePartner";
 import FAQ from "../FAQ/FAQ";
 import HowWorks from "../HowWorks/HowWorks";
 import MotionText from "../Motion/MotionText";
@@ -21,7 +20,7 @@ const Home = () => {
       <HowWorks></HowWorks>
       <FAQ></FAQ>
       <Reviews reviewsPromise={reviewsPromise}></Reviews>
-      <BecomePartner></BecomePartner>
+      
 
     </>
   );

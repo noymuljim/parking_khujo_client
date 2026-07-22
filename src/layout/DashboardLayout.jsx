@@ -34,8 +34,9 @@ const DashboardLayout = () => {
 
                         {/* custom btns*/}
 
+                      
                         <li>
-                            <NavLink to='/BecomePartner'
+                            <NavLink to='/dashboard/BecomePartner'
 
                                 className="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Become a partner">
 
