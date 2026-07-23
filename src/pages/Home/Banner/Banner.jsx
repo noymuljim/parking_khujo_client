@@ -51,7 +51,7 @@ const Banner = () => {
         </div>
 
         <div>
-          <NavLink to='/becomePartner' 
+          <NavLink to='/dashboard/becomePartner' 
           className='group flex items-center gap-3 rounded-full bg-primary px-2 py-2 pl-6 text-white font-semibold shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1'><span>Become a Parking Partner</span>
 
             <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white transition-transform duration-300 group-hover:translate-x-1">

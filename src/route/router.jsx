@@ -41,7 +41,8 @@ export const router = createBrowserRouter([
     children: [
       {
         path: 'BecomePartner',
-        element: <PrivateRoute><BecomePartner></BecomePartner></PrivateRoute>
+        element: <PrivateRoute><BecomePartner></BecomePartner></PrivateRoute>,
+        loader: () => fetch('/serviceCenters.json').then(res => res.json())
       },
 
     ]
